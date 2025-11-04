@@ -58,7 +58,7 @@ function DrawerContent({
         className={cn(
           "group/drawer-content bg-background fixed z-50 flex h-auto flex-col drawer-shadow-border overflow-hidden",
           "data-[vaul-drawer-direction=top]:left-[1%] data-[vaul-drawer-direction=top]:right-[1%] data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[80vh] data-[vaul-drawer-direction=top]:rounded-b-2xl",
-          "data-[vaul-drawer-direction=bottom]:left-[1%] data-[vaul-drawer-direction=bottom]:right-[1%] data-[vaul-drawer-direction=bottom]:bottom-[0.5%] data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=bottom]:rounded-t-2xl data-[vaul-drawer-direction=bottom]:rounded-b-2xl",
+          "data-[vaul-drawer-direction=bottom]:left-[1%] data-[vaul-drawer-direction=bottom]:right-[1%] data-[vaul-drawer-direction=bottom]:bottom-[0.6%] data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=bottom]:rounded-t-2xl data-[vaul-drawer-direction=bottom]:rounded-b-2xl",
           "data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-[1%] data-[vaul-drawer-direction=right]:w-[calc(75%-2%)] data-[vaul-drawer-direction=right]:sm:max-w-[calc(24rem-2%)]",
           "data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-[1%] data-[vaul-drawer-direction=left]:w-[calc(75%-2%)] data-[vaul-drawer-direction=left]:sm:max-w-[calc(24rem-2%)]",
           className
