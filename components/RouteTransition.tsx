@@ -82,7 +82,7 @@ export default function RouteTransition({ children, header }: RouteTransitionPro
           isVisible && !isExiting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         } motion-reduce:transition-none motion-reduce:translate-y-0 motion-reduce:opacity-100`}
         style={{
-          willChange: 'transform, opacity',
+          willChange: 'transform, opacity, filter',
           transitionTimingFunction: 'cubic-bezier(.165, .84, .44, 1)', // ease-out-quart per animations.md
         }}
         animate={{
