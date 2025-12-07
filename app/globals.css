@@ -23,6 +23,7 @@
   --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
+  --color-input-border: var(--input-border);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
@@ -37,92 +38,287 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-link: var(--link);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Typography - Font Sizes (Fluid Typography with clamp) */
+  /* Formula: clamp(min-size, preferred-size, max-size) */
+  /* Scales proportionally from mobile (320px) to desktop (1920px+) */
+  --font-size-h1: clamp(1.75rem, 2.5vw + 1rem, 2.5rem); /* 28px - 40px */
+  --font-size-h2: clamp(1.5rem, 2vw + 0.75rem, 2rem); /* 24px - 32px */
+  --font-size-h3: clamp(1.25rem, 1.5vw + 0.75rem, 1.5rem); /* 20px - 24px */
+  --font-size-body: clamp(0.875rem, 1vw + 0.5rem, 1rem); /* 14px - 16px */
+  --font-size-small: clamp(0.75rem, 0.875vw + 0.5rem, 0.875rem); /* 12px - 14px */
+  --font-size-eyebrow: clamp(0.625rem, 0.75vw + 0.5rem, 0.75rem); /* 10px - 12px */
+  
+  /* Typography - Line Heights */
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  
+  /* Typography - Font Weights (semantic names) */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  
+  /* Light Mode Colors */
+  --background: #FFF9F3;
+  --foreground: #32231A;
+  
+  /* Theme transition support */
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+  --card: #FFFFFF;
+  --card-foreground: #32231A;
+  --popover: #FFFFFF;
+  --popover-foreground: #32231A;
+  --primary: #FADDE1;
+  --primary-foreground: #32231A;
+  --secondary: #704232;
+  --secondary-foreground: #FFF9F3;
+  --muted: #F2E3DB;
+  --muted-foreground: #6E5A4A;
+  --accent: #F2C57C;
+  --accent-foreground: #32231A;
+  --destructive: #D77A61;
+  --destructive-foreground: #FFF9F3;
+  --border: #E4D5C9;
+  --input: #FFFFFF;
+  --input-border: #E4D5C9;
+  --ring: #5A7E8B;
+  --link: #5A7E8B;
+  --success: #5B8C5A;
+  --success-foreground: #FFF9F3;
+  --warning: #F2A65A;
+  --warning-foreground: #32231A;
+  --error: #D77A61;
+  --error-foreground: #FFF9F3;
+  --surface: #FFFFFF;
+  --surface-muted: #F2E3DB;
+  
+  /* Chart colors (keeping existing for compatibility) */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Sidebar colors */
+  --sidebar: #FFF9F3;
+  --sidebar-foreground: #32231A;
+  --sidebar-primary: #FADDE1;
+  --sidebar-primary-foreground: #32231A;
+  --sidebar-accent: #F2C57C;
+  --sidebar-accent-foreground: #32231A;
+  --sidebar-border: #E4D5C9;
+  --sidebar-ring: #5A7E8B;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  /* Dark Mode Colors */
+  --background: #050814;
+  --foreground: #F7F4F0;
+  
+  /* Theme transition support */
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+  --card: #0C1220;
+  --card-foreground: #F7F4F0;
+  --popover: #0C1220;
+  --popover-foreground: #F7F4F0;
+  --primary: #6C8DBA;
+  --primary-foreground: #F7F4F0;
+  --secondary: #F2C57C;
+  --secondary-foreground: #1A1410;
+  --muted: #101829;
+  --muted-foreground: #B9B0A6;
+  --accent: #FADDE1;
+  --accent-foreground: #1A1410;
+  --destructive: #E27B74;
+  --destructive-foreground: #F7F4F0;
+  --border: #2A3146;
+  --input: #0C1224;
+  --input-border: #2A3146;
+  --ring: #9BB4FF;
+  --link: #9BB4FF;
+  --success: #82C39B;
+  --success-foreground: #050814;
+  --warning: #F2B880;
+  --warning-foreground: #1A1410;
+  --error: #E27B74;
+  --error-foreground: #F7F4F0;
+  --surface: #0C1220;
+  --surface-muted: #101829;
+  
+  /* Chart colors (keeping existing for compatibility) */
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  
+  /* Sidebar colors */
+  --sidebar: #0C1220;
+  --sidebar-foreground: #F7F4F0;
+  --sidebar-primary: #6C8DBA;
+  --sidebar-primary-foreground: #F7F4F0;
+  --sidebar-accent: #F2C57C;
+  --sidebar-accent-foreground: #1A1410;
+  --sidebar-border: #2A3146;
+  --sidebar-ring: #9BB4FF;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  html,
-  body {
-    @apply h-screen overflow-hidden;
+  html {
+    @apply h-full;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply min-h-full;
+  }
+  html {
+    /* Smooth theme transitions */
+    transition: background-color 200ms ease-out, color 200ms ease-out;
+  }
+  
+  body {
+    @apply bg-primary text-primary-foreground font-sans;
     font-family: var(--font-kalice), sans-serif;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    /* Smooth theme transitions */
+    transition: background-color 200ms ease-out, color 200ms ease-out;
+  }
+  
+  /* Smooth transitions for theme-aware elements */
+  header,
+  main,
+  section,
+  div[class*="bg-"],
+  div[class*="text-"],
+  button,
+  a {
+    transition: background-color 200ms ease-out, color 200ms ease-out, border-color 200ms ease-out;
+  }
+  
+  /* Prevent layout shift and ensure synchronous updates during theme transition */
+  [data-theme-transitioning="true"] {
+    pointer-events: none;
+  }
+  
+  /* Disable transitions for media elements */
+  img,
+  svg,
+  video,
+  canvas {
+    transition: none;
+  }
+  
+  /* Typography - Headings */
+  h1 {
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-foreground);
+  }
+  
+  h2 {
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-foreground);
+  }
+  
+  h3 {
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-foreground);
+  }
+  
+  /* Typography - Body and small text */
+  p {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--primary-foreground);
+  }
+  
+  small {
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-body);
+  }
+  
+  /* Links - Accessibility */
+  a:not([class*="no-link-style"]) {
+    color: var(--link);
+    transition: color 200ms ease;
+  }
+  
+  a:not([class*="no-link-style"]):hover {
+    color: var(--link);
+    opacity: 0.8;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  
+  a:not([class*="no-link-style"]):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  
+  /* Ensure links have sufficient contrast */
+  a[href] {
+    text-decoration-thickness: 1.5px;
+  }
+  
+  /* Focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  
+  /* Ensure sufficient contrast for text */
+  .text-muted-foreground {
+    color: var(--muted-foreground);
+  }
+  
+  /* Success, Warning, Error colors */
+  .text-success {
+    color: var(--success);
+  }
+  
+  .text-warning {
+    color: var(--warning);
+  }
+  
+  .text-error {
+    color: var(--error);
+  }
+  
+  /* Input border color */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  select {
+    border-color: var(--input-border);
   }
 }
 
@@ -153,24 +349,137 @@
   .animate-accordion-up {
     animation: accordion-up 0.2s ease-out;
   }
+  
+  /* Typography Utilities */
+  .text-h1 {
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .text-h2 {
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .text-h3 {
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-heading);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .text-body {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+  }
+  
+  .text-small {
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-body);
+  }
+  
+  .text-eyebrow {
+    font-size: var(--font-size-eyebrow);
+    line-height: var(--line-height-body);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  /* Additional Fluid Typography Utilities for common sizes */
+  /* These use clamp for proportional scaling */
+  .text-xs {
+    font-size: clamp(0.625rem, 0.75vw + 0.5rem, 0.75rem); /* 10px - 12px */
+  }
+  
+  .text-sm {
+    font-size: clamp(0.75rem, 0.875vw + 0.5rem, 0.875rem); /* 12px - 14px */
+  }
+  
+  .text-base {
+    font-size: var(--font-size-body); /* Uses clamp from body */
+  }
+  
+  .text-lg {
+    font-size: clamp(1rem, 1.125vw + 0.5rem, 1.125rem); /* 16px - 18px */
+  }
+  
+  .text-xl {
+    font-size: clamp(1.125rem, 1.25vw + 0.75rem, 1.25rem); /* 18px - 20px */
+  }
+  
+  .text-2xl {
+    font-size: clamp(1.25rem, 1.5vw + 0.75rem, 1.5rem); /* 20px - 24px */
+  }
+  
+  .text-3xl {
+    font-size: clamp(1.5rem, 2vw + 0.75rem, 1.875rem); /* 24px - 30px */
+  }
+  
+  .text-4xl {
+    font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem); /* 28px - 40px */
+  }
+  
+  /* Font Weight Utilities */
+  .font-regular {
+    font-weight: var(--font-weight-regular);
+  }
+  
+  .font-medium {
+    font-weight: var(--font-weight-medium);
+  }
+  
+  .font-semibold {
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .font-bold {
+    font-weight: var(--font-weight-bold);
+  }
+  
+  /* Line Height Utilities */
+  .leading-heading {
+    line-height: var(--line-height-heading);
+  }
+  
+  .leading-body {
+    line-height: var(--line-height-body);
+  }
+  
+  /* Drawer shadow border with brand colors */
   .drawer-shadow-border {
     /* Shadow border technique: 
        - Use border for the semi-transparent edge
        - background-clip: padding-box prevents background from bleeding under border
        - Negative spread shadow (-1px) counteracts the border thickness
        - Main shadow provides depth/elevation */
-    border: 1px solid oklch(0.145 0 0 / 0.12) !important;
+    border: 1px solid rgba(50, 35, 26, 0.12) !important;
     background-clip: padding-box !important;
     box-shadow: 
-      0 8px 24px oklch(0.145 0 0 / 0.18),
-      0 0 0 -1px oklch(0.145 0 0 / 0.08) !important;
+      0 8px 24px rgba(50, 35, 26, 0.18),
+      0 0 0 -1px rgba(50, 35, 26, 0.08) !important;
   }
   .dark .drawer-shadow-border {
-    border-color: oklch(1 0 0 / 0.15) !important;
+    border-color: rgba(247, 244, 240, 0.15) !important;
     box-shadow: 
-      0 8px 24px oklch(0 0 0 / 0.3),
-      0 0 0 -1px oklch(0 0 0 / 0.15) !important;
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      0 0 0 -1px rgba(0, 0, 0, 0.15) !important;
   }
+  
+  /* Image loading shimmer animation */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+  
   @media (prefers-reduced-motion: reduce) {
     .motion-reduce\:transition-none {
       transition: none !important;
@@ -183,6 +492,9 @@
     }
     .animate-accordion-down,
     .animate-accordion-up {
+      animation: none !important;
+    }
+    .animate-shimmer {
       animation: none !important;
     }
   }

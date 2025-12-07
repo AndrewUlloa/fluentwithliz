@@ -8,12 +8,13 @@ import { useRouteTransition } from '@/components/RouteTransition';
 interface AnimatedLinkProps {
   href: string;
   className?: string;
+  style?: React.CSSProperties;
   children: React.ReactNode;
   suppressHydrationWarning?: boolean;
   onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 }
 
-export default function AnimatedLink({ href, className, children, suppressHydrationWarning, onClick: onClickProp }: AnimatedLinkProps) {
+export default function AnimatedLink({ href, className, style, children, suppressHydrationWarning, onClick: onClickProp }: AnimatedLinkProps) {
   const router = useRouter();
   const pathname = usePathname();
   const { startExit } = useRouteTransition();
@@ -38,7 +39,7 @@ export default function AnimatedLink({ href, className, children, suppressHydrat
   };
 
   return (
-    <Link href={href} className={className} onClick={onClick} prefetch suppressHydrationWarning={suppressHydrationWarning}>
+    <Link href={href} className={className} style={style} onClick={onClick} prefetch suppressHydrationWarning={suppressHydrationWarning}>
       {children}
     </Link>
   );

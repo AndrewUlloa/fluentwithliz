@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 import AnimatedLink from '@/components/AnimatedLink';
 import { DURATIONS, EASE_OUT, STAGGER } from '@/lib/animations';
+import { AnimatedTranslation } from '@/components/AnimatedTranslation';
 
 interface DropdownMenuProps {
   trigger: React.ReactNode | ((isOpen: boolean) => React.ReactNode);
@@ -168,28 +169,29 @@ export function ClassesDropdown({ className }: ClassesDropdownProps) {
       trigger={(isOpen) => (
         <button 
           className={cn(
-            'flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors duration-200 ease hover:text-foreground',
+            'flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors duration-200 ease hover:text-foreground whitespace-nowrap',
             className
           )}
+          style={{ minWidth: '4rem' }} // "Clases" is longest
         >
-          {t('classes', 'Classes')}
+          <AnimatedTranslation translationKey="classes" fallback="Classes" />
           <ChevronDown className={cn('size-4 transition-transform duration-200 ease-out motion-reduce:transition-none', isOpen && 'rotate-180')} />
         </button>
       )}
     >
       <div className="py-1">
         <DropdownMenuItem href="/classes/fluent-1on1">
-          {t('fluent1on1', 'Fluent 1:1')}
+          <AnimatedTranslation translationKey="fluent1on1" fallback="Fluent 1:1" />
         </DropdownMenuItem>
         <DropdownMenuItem href="/classes/fluent-circle">
-          {t('fluentCircle', 'Fluent Circle (Groups)')}
+          <AnimatedTranslation translationKey="fluentCircle" fallback="Fluent Circle (Groups)" />
         </DropdownMenuItem>
         <DropdownMenuItem href="/classes/fluent-conversation">
-          {t('fluentConversation', 'Fluent Conversation')}
+          <AnimatedTranslation translationKey="fluentConversation" fallback="Fluent Conversation" />
         </DropdownMenuItem>
         <div className="my-1 h-px bg-border" />
         <DropdownMenuItem href="/pricing">
-          {t('pricingBundles', 'Pricing & Bundles')}
+          <AnimatedTranslation translationKey="pricingBundles" fallback="Pricing & Bundles" />
         </DropdownMenuItem>
       </div>
     </DropdownMenu>
@@ -208,24 +210,25 @@ export function ResourcesDropdown({ className }: ResourcesDropdownProps) {
       trigger={(isOpen) => (
         <button 
           className={cn(
-            'flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors duration-200 ease hover:text-foreground',
+            'flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors duration-200 ease hover:text-foreground whitespace-nowrap',
             className
           )}
+          style={{ minWidth: '4.5rem' }} // "Recursos" is longest
         >
-          {t('resources', 'Resources')}
+          <AnimatedTranslation translationKey="resources" fallback="Resources" />
           <ChevronDown className={cn('size-4 transition-transform duration-200 ease-out motion-reduce:transition-none', isOpen && 'rotate-180')} />
         </button>
       )}
     >
       <div className="py-1">
         <DropdownMenuItem href="/resources/grammar-book">
-          {t('grammarBook', 'Grammar Book')}
+          <AnimatedTranslation translationKey="grammarBook" fallback="Grammar Book" />
         </DropdownMenuItem>
         <DropdownMenuItem href="/resources/google-classroom">
-          {t('googleClassroom', 'Google Classroom')}
+          <AnimatedTranslation translationKey="googleClassroom" fallback="Google Classroom" />
         </DropdownMenuItem>
         <DropdownMenuItem href="/resources/free-pdfs">
-          {t('freePdfsWarmups', 'Free PDFs & Warm-ups')}
+          <AnimatedTranslation translationKey="freePdfsWarmups" fallback="Free PDFs & Warm-ups" />
         </DropdownMenuItem>
       </div>
     </DropdownMenu>

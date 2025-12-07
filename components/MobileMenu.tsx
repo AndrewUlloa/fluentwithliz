@@ -16,6 +16,7 @@ import {
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import AnimatedLink from '@/components/AnimatedLink';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { DURATIONS, EASE_OUT, STAGGER } from '@/lib/animations';
 import { useDrawer } from '@/components/DrawerProvider';
 
@@ -325,7 +326,10 @@ export default function MobileMenu() {
                   className="flex flex-col gap-4"
                 >
                   <div className="flex items-center justify-between">
-                    <LanguageSwitcher />
+                    <div className="flex items-center gap-3">
+                      <ThemeSwitcher />
+                      <LanguageSwitcher />
+                    </div>
                     <div className="flex gap-3">
                       <a
                         href="https://instagram.com"
