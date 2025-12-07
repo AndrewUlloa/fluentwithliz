@@ -20,17 +20,31 @@ export function AnimatedTranslation({
   children,
 }: AnimatedTranslationProps) {
   const { t, i18n } = useTranslation();
+  const [mounted, setMounted] = useState(false);
+  
   const getTranslation = (key: string, fb?: string) => {
     return fb !== undefined ? t(key, fb) : t(key);
   };
   
-  const [displayText, setDisplayText] = useState(() => getTranslation(translationKey, fallback));
+  // Use fallback during SSR and initial render to prevent hydration mismatch
+  const [displayText, setDisplayText] = useState(() => fallback || translationKey);
   const [isVisible, setIsVisible] = useState(true);
-  const previousLanguage = useRef(i18n.language);
+  const previousLanguage = useRef<string | null>(null);
+
+  // Initialize with translation after mount to prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+    const initialText = getTranslation(translationKey, fallback);
+    setDisplayText(initialText);
+    previousLanguage.current = i18n.language;
+  }, []);
 
   useEffect(() => {
+    // Skip if not mounted yet
+    if (!mounted) return;
+    
     // Only animate if language actually changed
-    if (i18n.language !== previousLanguage.current) {
+    if (previousLanguage.current !== null && i18n.language !== previousLanguage.current) {
       // Fade out
       setIsVisible(false);
       
@@ -48,12 +62,12 @@ export function AnimatedTranslation({
       }, 200); // Half of total animation duration
 
       return () => clearTimeout(timeout);
-    } else {
+    } else if (mounted && previousLanguage.current !== null) {
       // Language hasn't changed, but translation might have updated
       // Update text without animation
       setDisplayText(getTranslation(translationKey, fallback));
     }
-  }, [i18n.language, translationKey, t, fallback]);
+  }, [mounted, i18n.language, translationKey, t, fallback]);
 
   const content = children ? children(displayText) : displayText;
 
