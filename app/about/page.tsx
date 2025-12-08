@@ -214,7 +214,7 @@ export default function About() {
 
                 <div className="space-y-4 text-body text-primary-foreground/90 leading-body">
                   <p>
-                    <AnimatedTranslation translationKey="aboutTransformation1" fallback="I've had students come to me who couldn't even say one full sentence. Then, a few years later, they're going to college in America, studying to be doctors. They tell me, \"You have no idea where I came from. We don't even have public toilets in our house, and now I'm studying to be a doctor. No one ever told me I could do any of those things.\"" />
+                    <AnimatedTranslation translationKey="aboutTransformation1" fallback={"I've had students come to me who couldn't even say one full sentence. Then, a few years later, they're going to college in America, studying to be doctors. They tell me, \"You have no idea where I came from. We don't even have public toilets in our house, and now I'm studying to be a doctor. No one ever told me I could do any of those things.\""} />
                   </p>
                   <p>
                     <AnimatedTranslation translationKey="aboutTransformation2" fallback="For us, it might be sitting across from somebody, teaching them and correcting them for an hour. But for them, it might be the start of the rest of their life." />
