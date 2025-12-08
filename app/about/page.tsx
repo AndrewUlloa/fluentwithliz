@@ -39,7 +39,7 @@ export default function About() {
                 className="text-h1 font-bold text-primary-foreground"
               />
               <p className="text-body text-primary-foreground/80 max-w-2xl mx-auto leading-body">
-                English for the life you're dreaming of. Learn without losing your native soul.
+                <AnimatedTranslation translationKey="aboutSubtitle" fallback="English for the life you're dreaming of. Learn without losing your native soul." />
               </p>
             </div>
           </div>
@@ -52,16 +52,18 @@ export default function About() {
             {/* My Story */}
             <SectionWrapper delay={0.1}>
               <div className="space-y-8">
-                <h2 className="text-h2 font-bold text-primary-foreground">My Story</h2>
+                <h2 className="text-h2 font-bold text-primary-foreground">
+                  <AnimatedTranslation translationKey="aboutMyStory" fallback="My Story" />
+                </h2>
                 
                 {/* Image - New York / Childhood */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                   <div className="order-2 md:order-1 space-y-4 text-body text-primary-foreground/90 leading-body">
                     <p>
-                      I'm Liz, and I'm from New York. I grew up here, went to school here, and I'm an educator specializing in teaching English to foreigners. But my journey with language learning started long before I became a teacher.
+                      <AnimatedTranslation translationKey="aboutMyStory1" fallback="I'm Liz, and I'm from New York. I grew up here, went to school here, and I'm an educator specializing in teaching English to foreigners. But my journey with language learning started long before I became a teacher." />
                     </p>
                     <p>
-                      My dad was born in Colombia, and growing up, I witnessed firsthand the difficulties he faced assimilating into American life. He never taught my sister or me Spanish—not a single word. It wasn't until I got older that I realized how much that said without literally saying anything.
+                      <AnimatedTranslation translationKey="aboutMyStory2" fallback="My dad was born in Colombia, and growing up, I witnessed firsthand the difficulties he faced assimilating into American life. He never taught my sister or me Spanish—not a single word. It wasn't until I got older that I realized how much that said without literally saying anything." />
                     </p>
                   </div>
                   <div className="order-1 md:order-2 aspect-[4/3] rounded-lg overflow-hidden">
@@ -79,7 +81,7 @@ export default function About() {
                 {/* Identity Struggle */}
                 <div className="space-y-4 text-body text-primary-foreground/90 leading-body">
                   <p>
-                    I remember having identity issues because I didn't fit in with the white kids here, and I didn't fit in with the Hispanic kids here. I just didn't really know who I was, and I felt like a part of me was really missing.
+                    <AnimatedTranslation translationKey="aboutMyStory3" fallback="I remember having identity issues because I didn't fit in with the white kids here, and I didn't fit in with the Hispanic kids here. I just didn't really know who I was, and I felt like a part of me was really missing." />
                   </p>
                 </div>
 
@@ -97,10 +99,10 @@ export default function About() {
                   </div>
                   <div className="space-y-4 text-body text-primary-foreground/90 leading-body">
                     <p>
-                      Then I studied abroad in Spain, and I was just around Spanish all the time. I fell in love with it. Even now, it's like my preferred language because it's just so much more funny and descriptive. The Tuesday is like so much better.
+                      <AnimatedTranslation translationKey="aboutMyStory4" fallback="Then I studied abroad in Spain, and I was just around Spanish all the time. I fell in love with it. Even now, it's like my preferred language because it's just so much more funny and descriptive. The Tuesday is like so much better." />
                     </p>
                     <p>
-                      I studied hard and earned my C1 certificate in Spanish. Of course, I still make mistakes, but I have that certificate, and more importantly, I have that connection to a language that feels like home.
+                      <AnimatedTranslation translationKey="aboutMyStory5" fallback="I studied hard and earned my C1 certificate in Spanish. Of course, I still make mistakes, but I have that certificate, and more importantly, I have that connection to a language that feels like home." />
                     </p>
                   </div>
                 </div>
@@ -110,7 +112,9 @@ export default function About() {
             {/* Why Language Matters */}
             <SectionWrapper delay={0.2}>
               <div className="space-y-8">
-                <h2 className="text-h2 font-bold text-primary-foreground">Why Language Matters</h2>
+                <h2 className="text-h2 font-bold text-primary-foreground">
+                  <AnimatedTranslation translationKey="aboutWhyLanguageMatters" fallback="Why Language Matters" />
+                </h2>
                 
                 {/* Full-width image - Family/Grandmother */}
                 <div className="aspect-[16/9] rounded-lg overflow-hidden">
@@ -126,13 +130,13 @@ export default function About() {
 
                 <div className="space-y-4 text-body text-primary-foreground/90 leading-body">
                   <p>
-                    Learning Spanish was a big deal for me for two reasons. First, it brought me closer to my extended family and my origins. My grandmother took care of us while my parents worked two or three jobs. I'm one of the only grandkids who can speak Spanish and speak to her.
+                    <AnimatedTranslation translationKey="aboutWhyLanguage1" fallback="Learning Spanish was a big deal for me for two reasons. First, it brought me closer to my extended family and my origins. My grandmother took care of us while my parents worked two or three jobs. I'm one of the only grandkids who can speak Spanish and speak to her." />
                   </p>
                   <p>
-                    It was almost this strange dynamic where you feel their love through their actions and behaviors, but you can't ever communicate with them. That connection through language is priceless.
+                    <AnimatedTranslation translationKey="aboutWhyLanguage2" fallback="It was almost this strange dynamic where you feel their love through their actions and behaviors, but you can't ever communicate with them. That connection through language is priceless." />
                   </p>
                   <p>
-                    The other part is this: I feel like having another language is like having another soul. When you have all those different souls, it kind of makes up who you are. So I take that with me—appreciate your native language, but at the same time, explore the other identities that coexist within you.
+                    <AnimatedTranslation translationKey="aboutWhyLanguage3" fallback="The other part is this: I feel like having another language is like having another soul. When you have all those different souls, it kind of makes up who you are. So I take that with me—appreciate your native language, but at the same time, explore the other identities that coexist within you." />
                   </p>
                 </div>
               </div>
@@ -141,14 +145,16 @@ export default function About() {
             {/* My Approach */}
             <SectionWrapper delay={0.3}>
               <div className="space-y-8">
-                <h2 className="text-h2 font-bold text-primary-foreground">My Approach</h2>
+                <h2 className="text-h2 font-bold text-primary-foreground">
+                  <AnimatedTranslation translationKey="aboutMyApproach" fallback="My Approach" />
+                </h2>
                 
                 <div className="space-y-4 text-body text-primary-foreground/90 leading-body">
                   <p>
-                    With language learning, I know what it's like to really struggle with that. There's a lot of vulnerability involved, and I feel like I do a good job tenderly approaching language with my students.
+                    <AnimatedTranslation translationKey="aboutApproach1" fallback="With language learning, I know what it's like to really struggle with that. There's a lot of vulnerability involved, and I feel like I do a good job tenderly approaching language with my students." />
                   </p>
                   <p>
-                    Globally, learning English is what's going to give you a lot of opportunities. It's the number one language that everyone communicates in, and that people at this point kind of expect you to know. But I'm able to teach it in a way that also incorporates your first language, honoring that native soul, while also helping you find out your identity in English.
+                    <AnimatedTranslation translationKey="aboutApproach2" fallback="Globally, learning English is what's going to give you a lot of opportunities. It's the number one language that everyone communicates in, and that people at this point kind of expect you to know. But I'm able to teach it in a way that also incorporates your first language, honoring that native soul, while also helping you find out your identity in English." />
                   </p>
                 </div>
 
@@ -178,10 +184,10 @@ export default function About() {
 
                 <div className="space-y-4 text-body text-primary-foreground/90 leading-body">
                   <p>
-                    I prefer group classes because there are more opportunities for authentic interaction. When it's one-on-one, students sometimes depend on you to carry the conversation. In a group, there are different ideas, and it ends up being more fun and productive.
+                    <AnimatedTranslation translationKey="aboutApproach3" fallback="I prefer group classes because there are more opportunities for authentic interaction. When it's one-on-one, students sometimes depend on you to carry the conversation. In a group, there are different ideas, and it ends up being more fun and productive." />
                   </p>
                   <p>
-                    I specialize in teaching adults—people in their 30s, 40s, and 50s. Adults take it more seriously. They're motivated because they need English to unlock life or career opportunities, not because someone is forcing them.
+                    <AnimatedTranslation translationKey="aboutApproach4" fallback="I specialize in teaching adults—people in their 30s, 40s, and 50s. Adults take it more seriously. They're motivated because they need English to unlock life or career opportunities, not because someone is forcing them." />
                   </p>
                 </div>
               </div>
@@ -190,7 +196,9 @@ export default function About() {
             {/* The Transformation */}
             <SectionWrapper delay={0.4}>
               <div className="space-y-8">
-                <h2 className="text-h2 font-bold text-primary-foreground">The Transformation</h2>
+                <h2 className="text-h2 font-bold text-primary-foreground">
+                  <AnimatedTranslation translationKey="aboutTransformation" fallback="The Transformation" />
+                </h2>
                 
                 {/* Before/After or Success Story Image */}
                 <div className="aspect-[16/9] rounded-lg overflow-hidden">
@@ -206,13 +214,13 @@ export default function About() {
 
                 <div className="space-y-4 text-body text-primary-foreground/90 leading-body">
                   <p>
-                    I've had students come to me who couldn't even say one full sentence. Then, a few years later, they're going to college in America, studying to be doctors. They tell me, "You have no idea where I came from. We don't even have public toilets in our house, and now I'm studying to be a doctor. No one ever told me I could do any of those things."
+                    <AnimatedTranslation translationKey="aboutTransformation1" fallback="I've had students come to me who couldn't even say one full sentence. Then, a few years later, they're going to college in America, studying to be doctors. They tell me, \"You have no idea where I came from. We don't even have public toilets in our house, and now I'm studying to be a doctor. No one ever told me I could do any of those things.\"" />
                   </p>
                   <p>
-                    For us, it might be sitting across from somebody, teaching them and correcting them for an hour. But for them, it might be the start of the rest of their life.
+                    <AnimatedTranslation translationKey="aboutTransformation2" fallback="For us, it might be sitting across from somebody, teaching them and correcting them for an hour. But for them, it might be the start of the rest of their life." />
                   </p>
                   <p>
-                    Everyone always tells me that they feel a lot more confident and motivated to practice. That's what I'm here for—not just to teach English, but to help you see what this journey can mean for the rest of your life.
+                    <AnimatedTranslation translationKey="aboutTransformation3" fallback="Everyone always tells me that they feel a lot more confident and motivated to practice. That's what I'm here for—not just to teach English, but to help you see what this journey can mean for the rest of your life." />
                   </p>
                 </div>
               </div>
@@ -221,13 +229,15 @@ export default function About() {
             {/* What to Expect */}
             <SectionWrapper delay={0.5}>
               <div className="space-y-8">
-                <h2 className="text-h2 font-bold text-primary-foreground">What to Expect</h2>
+                <h2 className="text-h2 font-bold text-primary-foreground">
+                  <AnimatedTranslation translationKey="aboutWhatToExpect" fallback="What to Expect" />
+                </h2>
                 
                 {/* Image - Welcoming/Arrival */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                   <div className="space-y-4 text-body text-primary-foreground/90 leading-body">
                     <p>
-                      When you arrive, I want you to feel <strong className="font-semibold text-primary-foreground">curious</strong>, <strong className="font-semibold text-primary-foreground">open-minded</strong>, <strong className="font-semibold text-primary-foreground">trusting</strong> in the process, and <strong className="font-semibold text-primary-foreground">positive</strong>.
+                      <AnimatedTranslation translationKey="aboutWhatToExpectArrival" fallback="When you arrive, I want you to feel curious, open-minded, trusting in the process, and positive." />
                     </p>
                   </div>
                   <div className="aspect-[4/3] rounded-lg overflow-hidden">
@@ -256,14 +266,14 @@ export default function About() {
                   </div>
                   <div className="space-y-4 text-body text-primary-foreground/90 leading-body order-1 md:order-2">
                     <p>
-                      By the time you leave, I want you to feel <strong className="font-semibold text-primary-foreground">empowered</strong>, <strong className="font-semibold text-primary-foreground">confident</strong>, <strong className="font-semibold text-primary-foreground">motivated</strong>, <strong className="font-semibold text-primary-foreground">supported</strong>, <strong className="font-semibold text-primary-foreground">fulfilled</strong>, and <strong className="font-semibold text-primary-foreground">hopeful</strong>.
+                      <AnimatedTranslation translationKey="aboutWhatToExpectDeparture" fallback="By the time you leave, I want you to feel empowered, confident, motivated, supported, fulfilled, and hopeful." />
                     </p>
                   </div>
                 </div>
 
                 <div className="space-y-4 text-body text-primary-foreground/90 leading-body">
                   <p>
-                    This is for the student who really wants to learn and value this experience with the same intentionality. You can sense it when you meet with them—that motivation, that curiosity, that investment in their own growth.
+                    <AnimatedTranslation translationKey="aboutWhatToExpect13" fallback="This is for the student who really wants to learn and value this experience with the same intentionality. You can sense it when you meet with them—that motivation, that curiosity, that investment in their own growth." />
                   </p>
                 </div>
               </div>
@@ -289,10 +299,10 @@ export default function About() {
                   {/* Content */}
                   <div className="relative p-8 sm:p-12 text-center space-y-6">
                     <h3 className="text-h3 font-semibold text-card-foreground">
-                      Ready to start your English journey?
+                      <AnimatedTranslation translationKey="aboutCTAReady" fallback="Ready to start your English journey?" />
                     </h3>
                     <p className="text-body text-card-foreground/80 max-w-xl mx-auto">
-                      Join motivated adult English learners who are ready to unlock new opportunities.
+                      <AnimatedTranslation translationKey="aboutCTADescription" fallback="Join motivated adult English learners who are ready to unlock new opportunities." />
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <AnimatedLink

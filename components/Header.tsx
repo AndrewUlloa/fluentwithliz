@@ -155,7 +155,7 @@ export default function Header() {
               size="icon"
               className="lg:hidden"
               onClick={() => setIsMobileMenuOpen(true)}
-              aria-label="Open menu"
+              aria-label={t('headerOpenMenu', 'Open menu')}
             >
               <Menu className="size-5" aria-hidden="true" />
             </Button>

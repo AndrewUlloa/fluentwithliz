@@ -13,10 +13,10 @@ export default function Home() {
         <main className="flex min-h-[calc(100vh-4rem)] w-full max-w-4xl mx-auto flex-col items-center justify-center gap-12 py-12 sm:py-16 lg:py-20 pb-16 lg:pb-0">
         <div className="flex flex-col items-center gap-8 text-center">
           <h1 className="text-h1 font-bold text-primary-foreground max-w-2xl">
-            English for the life you're dreaming of.
+            <AnimatedTranslation translationKey="homeHeroTitle" fallback="English for the life you're dreaming of." />
           </h1>
           <p className="text-body text-primary-foreground/80 max-w-xl leading-body">
-            Learn English without losing your native soul. Gentle, intentional English for big life changes.
+            <AnimatedTranslation translationKey="homeHeroSubtitle" fallback="Learn English without losing your native soul. Gentle, intentional English for big life changes." />
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function Home() {
 
         <div className="mt-8 text-center">
           <p className="text-small text-primary-foreground/60">
-            Join motivated adult English learners from around the world
+            <AnimatedTranslation translationKey="homeJoinLearners" fallback="Join motivated adult English learners from around the world" />
           </p>
         </div>
         </main>

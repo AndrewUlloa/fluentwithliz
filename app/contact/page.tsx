@@ -37,7 +37,7 @@ export default function Contact() {
                 <AnimatedTranslation translationKey="connectWithLiz" fallback="Connect with Liz" />
               </h1>
               <p className="text-body text-primary-foreground/80 max-w-2xl mx-auto leading-body">
-                Have questions? Want to learn more? Let's talk about how I can help you on your English learning journey.
+                <AnimatedTranslation translationKey="contactSubtitle" fallback="Have questions? Want to learn more? Let's talk about how I can help you on your English learning journey." />
               </p>
             </div>
           </div>
@@ -50,24 +50,26 @@ export default function Contact() {
             {/* Contact Form */}
             <SectionWrapper delay={0.1}>
               <div className="space-y-8">
-                <h2 className="text-h2 font-bold text-primary-foreground">Get in Touch</h2>
+                <h2 className="text-h2 font-bold text-primary-foreground">
+                  <AnimatedTranslation translationKey="contactGetInTouch" fallback="Get in Touch" />
+                </h2>
                 
                 <form className="space-y-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-body font-medium text-primary-foreground">
-                      Name
+                      <AnimatedTranslation translationKey="contactName" fallback="Name" />
                     </label>
                     <Input
                       id="name"
                       type="text"
-                      placeholder="Your name"
+                      placeholder={t('contactNamePlaceholder', 'Your name')}
                       className="w-full"
                     />
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-body font-medium text-primary-foreground">
-                      Email
+                      <AnimatedTranslation translationKey="contactEmail" fallback="Email" />
                     </label>
                     <Input
                       id="email"
@@ -79,25 +81,25 @@ export default function Contact() {
                   
                   <div className="space-y-2">
                     <label htmlFor="subject" className="text-body font-medium text-primary-foreground">
-                      Subject
+                      <AnimatedTranslation translationKey="contactSubject" fallback="Subject" />
                     </label>
                     <Input
                       id="subject"
                       type="text"
-                      placeholder="What would you like to discuss?"
+                      placeholder={t('contactSubjectPlaceholder', 'What would you like to discuss?')}
                       className="w-full"
                     />
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-body font-medium text-primary-foreground">
-                      Message
+                      <AnimatedTranslation translationKey="contactMessage" fallback="Message" />
                     </label>
                     <textarea
                       id="message"
                       rows={6}
                       className="peer flex w-full rounded-md border border-input bg-input px-3 py-2 text-body text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors motion-reduce:transition-none resize-none"
-                      placeholder="Tell me about yourself and what you're looking for..."
+                      placeholder={t('contactMessagePlaceholder', "Tell me about yourself and what you're looking for...")}
                     />
                   </div>
                   
@@ -105,7 +107,7 @@ export default function Contact() {
                     type="submit"
                     className="w-full h-12 rounded-full bg-secondary text-secondary-foreground text-base font-semibold"
                   >
-                    Send Message
+                    <AnimatedTranslation translationKey="contactSendMessage" fallback="Send Message" />
                   </Button>
                 </form>
               </div>
@@ -115,10 +117,10 @@ export default function Contact() {
             <SectionWrapper delay={0.2}>
               <div className="rounded-lg border border-primary-foreground/20 bg-card p-8 text-center space-y-6">
                 <h3 className="text-h3 font-semibold text-card-foreground">
-                  Prefer to Talk?
+                  <AnimatedTranslation translationKey="contactPreferToTalk" fallback="Prefer to Talk?" />
                 </h3>
                 <p className="text-body text-card-foreground/80 max-w-xl mx-auto">
-                  Book a free call to discuss your English learning goals and see if we're a good fit.
+                  <AnimatedTranslation translationKey="contactPreferToTalkDescription" fallback="Book a free call to discuss your English learning goals and see if we're a good fit." />
                 </p>
                 <a
                   href="#book-call"
@@ -132,7 +134,9 @@ export default function Contact() {
             {/* Social Links */}
             <SectionWrapper delay={0.3}>
               <div className="space-y-6">
-                <h2 className="text-h2 font-bold text-primary-foreground text-center">Connect on Social Media</h2>
+                <h2 className="text-h2 font-bold text-primary-foreground text-center">
+                  <AnimatedTranslation translationKey="contactConnectSocial" fallback="Connect on Social Media" />
+                </h2>
                 
                 <div className="flex justify-center gap-6">
                   <a
