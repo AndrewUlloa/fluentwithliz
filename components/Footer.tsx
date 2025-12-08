@@ -107,7 +107,7 @@ export default function Footer() {
                   placeholder={t('emailPlaceholder', 'Enter your email')}
                   required
                   disabled={isSubmitting || submitted}
-                  className="flex-1 rounded-md border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-2 text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-foreground/20 focus:border-primary-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="flex-1 rounded-md border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-2 text-base md:text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-foreground/20 focus:border-primary-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 />
                 <button
                   type="submit"
