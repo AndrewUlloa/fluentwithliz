@@ -205,7 +205,7 @@ export default function Resources() {
                   <input
                     type="email"
                     placeholder={t('emailPlaceholder', 'Enter your email')}
-                    className="flex-1 rounded-md border border-primary-foreground/20 bg-input px-4 py-2 text-body text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="flex-1 rounded-md border border-primary-foreground/20 bg-input px-4 py-2 text-lg md:text-body text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring"
                   />
                   <button className="flex h-10 items-center justify-center rounded-md bg-secondary px-6 text-secondary-foreground text-body font-semibold transition-colors hover:bg-secondary/90">
                     <AnimatedTranslation translationKey="subscribe" fallback="Subscribe" />

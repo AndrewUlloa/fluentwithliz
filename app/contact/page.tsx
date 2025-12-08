@@ -98,7 +98,7 @@ export default function Contact() {
                     <textarea
                       id="message"
                       rows={6}
-                      className="peer flex w-full rounded-md border border-input bg-input px-3 py-2 text-body text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors motion-reduce:transition-none resize-none"
+                      className="peer flex w-full rounded-md border border-input bg-input px-3 py-2 text-lg md:text-body text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors motion-reduce:transition-none resize-none"
                       placeholder={t('contactMessagePlaceholder', "Tell me about yourself and what you're looking for...")}
                     />
                   </div>
